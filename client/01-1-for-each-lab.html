@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Practica laboratorio foreach</title>
+</head>
+<body>
+    <h2>Todos</h2>
+    <div id="content"></div>
+    <h2>Todos completados</h2>
+    <div id="complete"></div>
+    <h2>Todos flatantes</h2>
+    <div id="notcomplete"></div>
+    <script>
+
+        
+        const contented = document.getElementById("content");
+        const completed = document.getElementById("complete"); 
+        const notCompletd = document.getElementById("notcomplete");
+        const checked = document.getElementById("check")
+        const todoList = [{id:1, todo:"Ir al gym", status:"pendienting" ,}, 
+        { id:2, todo:"Estudiar array con javascript", status:"pendienting" , }, 
+        { id:3, todo:"Estudiar Angular", status:"Pendienting" , }, 
+        { id:4, todo:"Desayunar", status:"completed" , }, 
+        { id:5, todo:"Tender cama", status:"completed" , }, 
+        { id:6, todo:"Junta con gasomas", status:"Pendieting" , }];
+     
+        todoList.forEach(item =>  {
+
+            contented.innerHTML += `<li>${item.todo} <input class="task-chk" id="check" type="checkbox"></li>`
+
+            if(item.status === "completed"){
+       
+            completed.innerHTML += `<li>${item.todo} <input class="task-chk" id="check" type="checkbox"></li>`
+     
+
+            }else if(item.status != "completed"){
+               notCompletd.innerHTML += `<li>${item.todo} <input class="task-chk" id="check" type="checkbox"></li>`
+            }
+        })
+
+    </script>
+</body>
+</html>
